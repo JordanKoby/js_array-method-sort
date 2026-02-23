@@ -35,6 +35,10 @@ function applyCustomSort() {
 
     return this;
   };
+
+  return function (arr, compareFn) {
+    return arr.sort2(compareFn);
+  };
 }
 
 module.exports = applyCustomSort;
