@@ -36,9 +36,11 @@ function applyCustomSort() {
     return this;
   };
 
-  return function (arr, compareFn) {
-    return arr.sort2(compareFn);
+  /* eslint-disable no-extend-native */
+  Array.prototype.sort = function (compareFn) {
+    return this.sort2(compareFn);
   };
+  /* eslint-enable no-extend-native */
 }
 
 module.exports = applyCustomSort;
